@@ -10,10 +10,10 @@ import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
 interface SEOProps {
-  description : string,
-  lang : string,
-  meta : Array<{name: string, content : any}>,
   title : string;
+  description? : string,
+  lang? : string,
+  meta? : Array<{name: string, content : any}>,
 }
 
 function SEO(props : SEOProps) {
@@ -71,7 +71,7 @@ function SEO(props : SEOProps) {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(props.meta)}
+      ].concat(props.meta!)}
     />
   )
 }
